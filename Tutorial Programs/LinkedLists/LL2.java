@@ -162,6 +162,23 @@ public class LL2 {
         return temp;
     }
 
+    public void removeDup() {
+        Node node = head;
+        if (head == null) {
+            System.out.println("Linked List is Empty");
+        }
+        while (node.next != null) {
+            if (node.data == node.next.data) {
+                node.next = node.next.next;
+                size--;
+            } else {
+                node = node.next;
+            }
+        }
+        tail = node;
+        tail.next = null;
+    }
+
     public void display() {
         Node temp = head;
         while(temp != null){
@@ -174,7 +191,11 @@ public class LL2 {
     public static void main(String[] args) {
         LL2 list = new LL2();
         list.insertFirst(10);
+        list.insertFirst(10);
+        list.insertFirst(10);
         list.insertEnd(20);
+        list.insertEnd(30);
+        list.insertEnd(30);
         list.insertEnd(30);
         list.insertEnd(40);
         list.insertIndex(35, 3);
@@ -189,6 +210,7 @@ public class LL2 {
         // System.out.println("Removed Element: "+ list.deleteIndex(3));
         // System.out.println("Removed Element: "+ list.deleteIndex(7));
         System.out.println("Searched ELement Index: " + list.search(30));
+        list.removeDup();
         list.display();
     }
 

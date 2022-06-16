@@ -86,6 +86,23 @@ public class LL {
         }
     }
 
+    public void removeDup() {
+        Node node = head;
+        if (head == null) {
+            System.out.println("Linked List is Empty");
+        }
+        while (node.next != null) {
+            if (node.val == node.next.val) {
+                node.next = node.next.next;
+                size--;
+            } else {
+                node = node.next;
+            }
+        }
+        tail = node;
+        tail.next = null;
+    }
+
     public void display(){
         Node temp = head;
         while(temp != null){
@@ -104,6 +121,7 @@ public class LL {
         list.insertAtMid(25, 1);
         list.delete(25);
         list.delete(30);
+        list.removeDup();
         list.display();
     }
 }
