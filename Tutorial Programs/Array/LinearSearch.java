@@ -18,7 +18,7 @@ public class LinearSearch {
         int low = 0;
         int mid = 0;
         for (int i = 0; i < arr.length; i++) {
-            mid = (high + low) / 2;
+            mid = low + (high - low) / 2;
             if (arr[mid] == target)
                 return mid;
 
@@ -39,12 +39,9 @@ public class LinearSearch {
     // }
 
     public static void main(String[] args) {
-        // int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        // int target = 3;
-        // // System.out.println(linearSearch(arr, target));
-        // System.out.println(binarySearch(arr, target));
-
-        int k = (int)3.7;
-        System.out.println(k);
+        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8};
+        int target = 7;
+        // System.out.println(linearSearch(arr, target));
+        System.out.println(binarySearch(arr, target));
     }
 }
