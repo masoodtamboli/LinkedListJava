@@ -1,7 +1,5 @@
 package Array;
 
-import java.util.Arrays;
-
 public class Binary2DArray {
 
     public static int[] search(int[][] arr, int target) {
