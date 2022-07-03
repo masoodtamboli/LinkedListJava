@@ -4,7 +4,7 @@ class Greeting{
     }
 }
 
-
+//We have to override this method cause 
 class India{
     Greeting g = new Greeting(){
         void sayHello(){

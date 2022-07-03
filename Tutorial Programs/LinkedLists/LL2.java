@@ -8,11 +8,6 @@ public class LL2 {
         Node(int val) {
             this.data = val;
         }
-
-        Node() {
-
-        }
-
     }
 
     Node head, tail;
@@ -163,6 +158,27 @@ public class LL2 {
         return temp;
     }
 
+    public void reverse(){
+        Node prev = null;
+        Node curr = head;
+        Node further = null;
+        while(curr != null){
+            // curr.next = prev;
+            // prev = curr;
+            // curr = further;
+            // further = further.next;
+
+            further = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = further;
+        }
+
+        display(prev);
+
+
+    }
+
     public void removeDup() {
         Node node = head;
         if (head == null) {
@@ -240,15 +256,17 @@ public class LL2 {
         LL2 list = new LL2();
         list.insertEnd(1);
         list.insertEnd(2);
-        list.insertEnd(7);
-        list.insertEnd(10);
+        list.insertEnd(3);
+        list.insertEnd(4);
+        list.insertEnd(5);
+        list.reverse();
 
-        LL2 list2 = new LL2();
-        list2.insertEnd(3);
-        list2.insertEnd(7);
-        list2.insertEnd(9);
-        list2.insertEnd(10);
-        list2.insertEnd(15);
+        // LL2 list2 = new LL2();
+        // list2.insertEnd(3);
+        // list2.insertEnd(7);
+        // list2.insertEnd(9);
+        // list2.insertEnd(10);
+        // list2.insertEnd(15);
 
         // System.out.println("size "+ list.size );
         // System.out.println("Removed Element: "+ list.deleteFisrt());
@@ -260,8 +278,10 @@ public class LL2 {
         // System.out.println("Searched ELement Index: " + list.search(30));
         // list.removeDup();
         
-        list.display(list.head, list2.head);
-        list.mergeSorted(list.head, list2.head);
+        // list.display(list.head, list2.head);
+        // list.mergeSorted(list.head, list2.head);
+
+
     }
 
 }
